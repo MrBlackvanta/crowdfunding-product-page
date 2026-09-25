@@ -30,6 +30,7 @@
   --text-4xl--line-height: normal;
 
   --container-content: 45.625rem;
+  --container-header: 69.375rem;
 }
 
 @layer base {
