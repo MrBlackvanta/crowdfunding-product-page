@@ -6,9 +6,30 @@
 
   --color-page: #fafafa;
   --color-ink: #000000;
-  --color-muted: #7a7a7a;
-  --color-cyan: #3cb3ab;
-  --color-cyan-dark: #147b74;
+  --color-charcoal: #2f2f2f;
+  --color-muted: #707070;
+  --color-control: #949494;
+  --color-line: #d9d9d9;
+  --color-hairline: #f2f2f2;
+  --color-cyan: #147a73;
+  --color-cyan-strong: #10605b;
+
+  --text-2xs: 0.8125rem;
+  --text-2xs--line-height: normal;
+  --text-xs--line-height: normal;
+  --text-sm--line-height: normal;
+  --text-md: 0.9375rem;
+  --text-md--line-height: normal;
+  --text-base--line-height: normal;
+  --text-lg--line-height: normal;
+  --text-xl--line-height: normal;
+  --text-2xl--line-height: normal;
+  --text-3xl: 1.75rem;
+  --text-3xl--line-height: normal;
+  --text-4xl: 2rem;
+  --text-4xl--line-height: normal;
+
+  --container-content: 45.625rem;
 }
 
 @layer base {
@@ -32,13 +53,22 @@
 }
 
 @utility v-focus-ring {
-  @apply outline-cyan-dark outline-2 outline-offset-2 outline-solid;
+  @apply outline-cyan outline-2 outline-offset-2 outline-solid;
 }
 
 @utility v-skip-link {
   @apply sr-only;
 
   @variant focus-visible {
-    @apply bg-cyan-dark not-sr-only fixed top-4 left-4 z-60 rounded-full px-6 py-3 font-bold text-white;
+    @apply bg-cyan not-sr-only fixed top-4 left-4 z-60 rounded-full px-6 py-3 font-bold text-white;
   }
+}
+
+@utility v-hero-scrim {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0.6) 0,
+    rgb(0 0 0 / 0.6) 72px,
+    rgb(0 0 0 / 0) 128px
+  );
 }
