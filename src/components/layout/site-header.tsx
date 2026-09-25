@@ -104,25 +104,25 @@ export default function SiteHeader() {
         id="site-menu"
         aria-label="Primary"
         hidden={!menuOpen}
-        className="border-hairline fixed inset-x-6 top-22 rounded-lg border bg-white py-6 md:hidden"
+        className="inset-ring-hairline fixed inset-x-6 top-22 rounded-lg bg-white inset-ring md:hidden"
       >
         <ul className="divide-charcoal/10 divide-y text-lg font-medium">
           {navLinks.map(({ label, href }) => (
-            <li key={href} className="px-6 py-6 first:pt-0">
+            <li key={href}>
               <a
                 href={href}
                 onClick={() => setMenuOpen(false)}
-                className="block"
+                className="block px-6 py-6 focus-visible:-outline-offset-2"
               >
                 {label}
               </a>
             </li>
           ))}
-          <li className="px-6 pt-6">
+          <li>
             <button
               type="button"
               onClick={startPledge}
-              className="block w-full text-left"
+              className="block w-full px-6 py-6 text-left focus-visible:-outline-offset-2"
             >
               Get Started
             </button>

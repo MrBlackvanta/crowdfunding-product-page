@@ -9,6 +9,7 @@
   --color-charcoal: #2f2f2f;
   --color-muted: #707070;
   --color-control: #949494;
+  --color-flag: #b1b1b1;
   --color-line: #d9d9d9;
   --color-hairline: #f2f2f2;
   --color-cyan: #147a73;
@@ -37,6 +38,7 @@
   html {
     @apply bg-page text-ink font-sans;
     color-scheme: light;
+    interpolate-size: allow-keywords;
     overflow-y: scroll;
   }
 
