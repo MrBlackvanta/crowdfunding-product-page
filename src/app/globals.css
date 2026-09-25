@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@source not "../../*.md";
+
+@theme {
+  --font-sans: var(--font-commissioner), ui-sans-serif, system-ui, sans-serif;
+
+  --color-page: #fafafa;
+  --color-ink: #000000;
+  --color-muted: #7a7a7a;
+  --color-cyan: #3cb3ab;
+  --color-cyan-dark: #147b74;
+}
+
+@layer base {
+  html {
+    @apply bg-page text-ink font-sans;
+    color-scheme: light;
+    overflow-y: scroll;
+  }
+
+  button:not(:disabled) {
+    @apply cursor-pointer;
+  }
+
+  source {
+    display: none;
+  }
+
+  :focus-visible {
+    @apply v-focus-ring;
+  }
+}
+
+@utility v-focus-ring {
+  @apply outline-cyan-dark outline-2 outline-offset-2 outline-solid;
+}
+
+@utility v-skip-link {
+  @apply sr-only;
+
+  @variant focus-visible {
+    @apply bg-cyan-dark not-sr-only fixed top-4 left-4 z-60 rounded-full px-6 py-3 font-bold text-white;
+  }
+}
