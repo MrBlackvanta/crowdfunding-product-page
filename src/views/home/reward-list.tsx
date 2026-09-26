@@ -18,10 +18,12 @@ export default function RewardList() {
           <li
             key={id}
             data-sold-out={soldOut || undefined}
-            className="inset-ring-line data-sold-out:inset-ring-hairline rounded-lg p-6 inset-ring md:px-8 md:pt-9.5 md:pb-8"
+            className="group/reward inset-ring-line data-sold-out:inset-ring-hairline rounded-lg p-6 inset-ring md:px-8 md:pt-9.5 md:pb-8"
           >
             <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-              <h3 className="text-sm font-bold md:text-lg">{title}</h3>
+              <h3 className="text-sm font-bold group-data-sold-out/reward:opacity-60 md:text-lg">
+                {title}
+              </h3>
               <p className="text-cyan md:text-md text-sm font-medium">
                 Pledge {money.format(minimumPledge)} or more
               </p>
@@ -33,7 +35,9 @@ export default function RewardList() {
 
             <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <p className="flex items-center gap-2">
-                <span className="text-4xl font-bold">{stock}</span>
+                <span className="text-4xl font-bold group-data-sold-out/reward:opacity-60">
+                  {stock}
+                </span>
                 <span className="text-muted text-md">left</span>
               </p>
 

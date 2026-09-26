@@ -5,6 +5,7 @@ import {
   FundingStats,
   HeroBanner,
   IntroCard,
+  PledgeDialog,
 } from "@/views/home";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
           <AboutProject />
         </div>
       </main>
+      <PledgeDialog />
     </CampaignProvider>
   );
 }

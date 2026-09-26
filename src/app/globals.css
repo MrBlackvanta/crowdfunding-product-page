@@ -67,6 +67,16 @@
   }
 }
 
+@utility v-amount-input {
+  appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+}
+
 @utility v-stat-divider {
   &:not(:first-child)::before {
     @apply bg-line mx-auto mb-6 block h-px w-20 content-[''];

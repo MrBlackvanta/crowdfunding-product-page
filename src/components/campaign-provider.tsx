@@ -49,8 +49,9 @@ function reduceCampaign(
     case "rewardSelected":
       return { ...state, selectedRewardId: action.rewardId };
     case "pledgeDismissed":
+      return state.stage === "pledging" ? { ...state, stage: "idle" } : state;
     case "thanksDismissed":
-      return { ...state, stage: "idle" };
+      return state.stage === "thanking" ? { ...state, stage: "idle" } : state;
     case "pledgeConfirmed": {
       const rewardId = state.selectedRewardId;
       const claimsStock = rewardId !== null && rewardId in state.stockById;
