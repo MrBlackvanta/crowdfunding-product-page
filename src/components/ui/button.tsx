@@ -7,7 +7,7 @@ export default function Button({
   return (
     <button
       type="button"
-      className={`bg-cyan hover:bg-cyan-strong rounded-full font-bold text-white motion-safe:transition-colors ${className}`}
+      className={`bg-cyan disabled:bg-charcoal/25 not-disabled:hover:bg-cyan-strong rounded-full font-bold text-white motion-safe:transition-colors ${className}`}
       {...props}
     />
   );

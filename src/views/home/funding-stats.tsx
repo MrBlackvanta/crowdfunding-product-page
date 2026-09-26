@@ -2,14 +2,7 @@
 
 import { useCampaign } from "@/components/campaign-provider";
 import { project } from "@/data/campaign";
-
-const money = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-  maximumFractionDigits: 0,
-});
-
-const count = new Intl.NumberFormat("en-US");
+import { count, money } from "@/lib";
 
 export default function FundingStats() {
   const [{ raised, backers }] = useCampaign();
