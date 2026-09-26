@@ -67,6 +67,20 @@
   }
 }
 
+@utility v-stat-divider {
+  &:not(:first-child)::before {
+    @apply bg-line mx-auto mb-6 block h-px w-20 content-[''];
+  }
+
+  @variant md {
+    @apply relative;
+
+    &:not(:first-child)::before {
+      @apply absolute top-0 -left-12 mb-0 h-15.75 w-px;
+    }
+  }
+}
+
 @utility v-hero-scrim {
   background-image: linear-gradient(
     to bottom,
