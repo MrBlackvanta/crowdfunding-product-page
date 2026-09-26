@@ -44,7 +44,7 @@ export default function PledgeOption({
         <div className="col-start-2 row-start-1 flex min-h-10.5 flex-col justify-center gap-2 md:min-h-0 md:flex-row md:items-center md:justify-start md:gap-4">
           <label
             htmlFor={inputId}
-            className="cursor-pointer text-sm font-bold group-data-sold-out/option:cursor-default group-data-sold-out/option:opacity-60 before:absolute before:inset-0 md:text-base"
+            className="not-group-data-sold-out/option:hover:text-cyan cursor-pointer text-sm font-bold group-data-sold-out/option:cursor-default group-data-sold-out/option:opacity-60 before:absolute before:inset-0 motion-safe:transition-colors md:text-base"
           >
             {title}
           </label>

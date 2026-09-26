@@ -10,9 +10,12 @@ const navLinks = [
   { label: "Discover", href: "#rewards" },
 ];
 
+const desktopNavQuery = "(min-width: 48rem)";
+
 export default function SiteHeader() {
   const [, dispatch] = useCampaign();
   const [menuOpen, setMenuOpen] = useState(false);
+  const siteHeader = useRef<HTMLElement>(null);
   const menuToggle = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -28,6 +31,30 @@ export default function SiteHeader() {
     return () => document.removeEventListener("keydown", closeOnEscape);
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const desktopNav = window.matchMedia(desktopNavQuery);
+    const closeOnDesktopNav = (event: MediaQueryListEvent) => {
+      if (event.matches) setMenuOpen(false);
+    };
+
+    desktopNav.addEventListener("change", closeOnDesktopNav);
+    return () => desktopNav.removeEventListener("change", closeOnDesktopNav);
+  }, [menuOpen]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const behindMenu = [...document.body.children].filter(
+      (element) => element !== siteHeader.current,
+    );
+    behindMenu.forEach((element) => element.setAttribute("inert", ""));
+
+    return () =>
+      behindMenu.forEach((element) => element.removeAttribute("inert"));
+  }, [menuOpen]);
+
   const dismissMenu = () => {
     setMenuOpen(false);
     menuToggle.current?.focus();
@@ -39,7 +66,10 @@ export default function SiteHeader() {
   };
 
   return (
-    <header className="v-hero-scrim absolute inset-x-0 top-0 z-30 h-32 px-6 pt-8 md:pt-12">
+    <header
+      ref={siteHeader}
+      className="v-hero-scrim absolute inset-x-0 top-0 z-30 h-32 px-6 pt-8 md:pt-12"
+    >
       <div
         aria-hidden="true"
         hidden={!menuOpen}

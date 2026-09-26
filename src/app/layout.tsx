@@ -19,7 +19,7 @@ const shareImage = {
   url: "/opengraph-image.jpg",
   width: 1200,
   height: 630,
-  alt: "The crowdfund wordmark above the headline “Back the Mastercraft Bamboo Monitor Riser”.",
+  alt: "A photo of the bamboo monitor riser beside the headline “Back the Mastercraft Bamboo Monitor Riser”.",
 };
 
 export const metadata: Metadata = {

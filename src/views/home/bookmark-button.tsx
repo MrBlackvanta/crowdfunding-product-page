@@ -11,7 +11,7 @@ export default function BookmarkButton() {
       type="button"
       aria-pressed={bookmarked}
       onClick={() => dispatch({ type: "bookmarkToggled" })}
-      className={`group flex w-fit shrink-0 items-center gap-4 rounded-full font-bold motion-safe:transition-[width] md:pr-6 ${
+      className={`group flex w-fit shrink-0 items-center gap-4 rounded-full font-bold motion-safe:transition-colors md:pr-6 ${
         bookmarked ? "text-cyan md:bg-cyan/5" : "text-muted md:bg-charcoal/5"
       }`}
     >
