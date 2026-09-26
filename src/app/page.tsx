@@ -1,11 +1,12 @@
 import CampaignProvider from "@/components/campaign-provider";
-import { SiteHeader } from "@/components/layout";
+import { SiteFooter, SiteHeader } from "@/components/layout";
 import {
   AboutProject,
   FundingStats,
   HeroBanner,
   IntroCard,
   PledgeDialog,
+  ThanksDialog,
 } from "@/views/home";
 
 export default function Home() {
@@ -20,7 +21,9 @@ export default function Home() {
           <AboutProject />
         </div>
       </main>
+      <SiteFooter />
       <PledgeDialog />
+      <ThanksDialog />
     </CampaignProvider>
   );
 }

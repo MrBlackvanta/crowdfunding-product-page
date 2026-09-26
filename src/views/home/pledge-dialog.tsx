@@ -13,6 +13,8 @@ export default function PledgeDialog() {
       open={stage === "pledging"}
       labelledBy="pledge-title"
       onClose={() => dispatch({ type: "pledgeDismissed" })}
+      closeButton
+      className="max-w-content px-6 py-8 md:p-12"
     >
       <h2 id="pledge-title" className="text-lg font-bold md:text-2xl">
         Back this project
