@@ -38,13 +38,13 @@ export default function PledgeOption({
           checked={selected}
           disabled={soldOut}
           onChange={() => dispatch({ type: "rewardSelected", rewardId: id })}
-          className="peer border-line checked:bg-cyan disabled:border-hairline col-start-1 row-start-1 size-6 shrink-0 appearance-none rounded-full border bg-white checked:inset-ring-5 checked:inset-ring-white"
+          className="border-line checked:bg-cyan disabled:border-hairline col-start-1 row-start-1 size-6 shrink-0 appearance-none rounded-full border bg-white checked:inset-ring-5 checked:inset-ring-white"
         />
 
-        <div className="col-start-2 row-start-1 flex min-h-10.5 flex-col justify-center gap-2 peer-enabled:cursor-pointer md:min-h-0 md:flex-row md:items-center md:justify-start md:gap-4">
+        <div className="col-start-2 row-start-1 flex min-h-10.5 flex-col justify-center gap-2 md:min-h-0 md:flex-row md:items-center md:justify-start md:gap-4">
           <label
             htmlFor={inputId}
-            className="text-sm font-bold group-data-sold-out/option:opacity-60 before:absolute before:inset-0 md:text-base"
+            className="cursor-pointer text-sm font-bold group-data-sold-out/option:cursor-default group-data-sold-out/option:opacity-60 before:absolute before:inset-0 md:text-base"
           >
             {title}
           </label>

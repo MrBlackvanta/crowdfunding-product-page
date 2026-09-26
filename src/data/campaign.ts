@@ -11,6 +11,7 @@ export const project = {
   tagline:
     "A beautiful & handcrafted monitor stand to reduce neck and eye strain.",
   goal: 100_000,
+  maxPledge: 10_000,
   raised: 89_914,
   backers: 5_007,
   daysLeft: 56,

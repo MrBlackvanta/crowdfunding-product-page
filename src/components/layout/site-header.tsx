@@ -40,13 +40,13 @@ export default function SiteHeader() {
 
   return (
     <header className="v-hero-scrim absolute inset-x-0 top-0 z-30 h-32 px-6 pt-8 md:pt-12">
-      {menuOpen && (
-        <div
-          aria-hidden="true"
-          onClick={dismissMenu}
-          className="from-ink/60 to-ink/0 fixed inset-0 bg-linear-to-b/srgb md:hidden"
-        />
-      )}
+      <div
+        aria-hidden="true"
+        hidden={!menuOpen}
+        data-open={menuOpen || undefined}
+        onClick={dismissMenu}
+        className="v-reveal from-ink/60 to-ink/0 fixed inset-0 bg-linear-to-b/srgb md:hidden"
+      />
 
       <div className="max-w-header relative mx-auto flex items-center justify-between">
         <Link
@@ -104,7 +104,8 @@ export default function SiteHeader() {
         id="site-menu"
         aria-label="Primary"
         hidden={!menuOpen}
-        className="inset-ring-hairline fixed inset-x-6 top-22 rounded-lg bg-white inset-ring md:hidden"
+        data-open={menuOpen || undefined}
+        className="v-reveal inset-ring-hairline fixed inset-x-6 top-22 rounded-lg bg-white inset-ring md:hidden starting:-translate-y-2"
       >
         <ul className="divide-charcoal/10 divide-y text-lg font-medium">
           {navLinks.map(({ label, href }) => (

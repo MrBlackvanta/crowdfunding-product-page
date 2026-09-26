@@ -33,9 +33,10 @@ export default function Dialog({
   return (
     <dialog
       ref={dialog}
+      data-open={open || undefined}
       aria-labelledby={labelledBy}
       onClose={onClose}
-      className="backdrop:bg-ink/50 m-0 size-full max-h-none max-w-none overflow-y-auto overscroll-contain bg-transparent p-0"
+      className="v-reveal backdrop:bg-ink/50 m-0 size-full max-h-none max-w-none overflow-y-auto overscroll-contain bg-transparent p-0 starting:-translate-y-2"
     >
       <div
         onClick={({ target, currentTarget }) =>

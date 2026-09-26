@@ -67,6 +67,37 @@
   }
 }
 
+@utility v-reveal {
+  opacity: 0;
+
+  &::backdrop {
+    opacity: 0;
+  }
+
+  &[data-open],
+  &[data-open]::backdrop {
+    opacity: 1;
+  }
+
+  @starting-style {
+    &[data-open],
+    &[data-open]::backdrop {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &,
+    &::backdrop {
+      transition:
+        opacity 200ms var(--ease-out),
+        translate 200ms var(--ease-out),
+        display 200ms allow-discrete,
+        overlay 200ms allow-discrete;
+    }
+  }
+}
+
 @utility v-amount-input {
   appearance: textfield;
 

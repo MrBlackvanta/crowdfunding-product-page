@@ -1,12 +1,16 @@
 "use client";
 
 import { Button } from "@/components/ui";
+import { project } from "@/data/campaign";
 import { useState } from "react";
 
 type PledgeAmountProps = {
   minimum: number;
   onConfirm: (amount: number) => void;
 };
+
+const capPledge = (value: string) =>
+  Number(value) > project.maxPledge ? String(project.maxPledge) : value;
 
 export default function PledgeAmount({
   minimum,
@@ -37,8 +41,9 @@ export default function PledgeAmount({
             type="number"
             required
             min={minimum}
+            max={project.maxPledge}
             value={amount}
-            onChange={(event) => setAmount(event.target.value)}
+            onChange={(event) => setAmount(capPledge(event.target.value))}
             className="v-amount-input w-full min-w-0 text-sm font-bold focus-visible:outline-none"
           />
         </div>
